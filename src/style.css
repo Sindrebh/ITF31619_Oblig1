@@ -1,96 +1,147 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* General styles */
 body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  width: 100%;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  background-color: #e3f2fd; /* Light background for calmness */
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #ffffff; /* White background for content area */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+ 
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  margin: 0;
+  font-size: 2.5em;
+  color: #212529; /* Dark text color for headings */
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+h2 {
+  margin: 2rem;
+  font-size: 2em;
+  color: #007bff; /* Primary color for subheadings */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #3178c6aa);
+/* Section styles */
+section {
+  margin-bottom: 30px;
+  color: #343a40; /* Dark gray for text in sections */
 }
 
-.card {
-  padding: 2em;
+.intro-me, .coding-skills {
+  padding: 20px;
+  border-radius: 10px;
+  background: #f8f9fa; /* Light gray background for sections */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.read-the-docs {
-  color: #888;
+.intro-me h2, .coding-skills h2 {
+  color: #007bff; /* Primary color for section headings */
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #ffffff; /* White background for list items */
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: 600;
+  color: #343a40; /* Dark gray for labels */
+}
+
+input[type="text"], input[type="url"] {
+  padding: 12px;
+  border: 1px solid #ced4da; /* Light gray border for inputs */
+  border-radius: 6px;
+  font-size: 16px;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  padding: 12px 20px;
+  background-color: #007bff; /* Primary color for button */
+  color: #ffffff; /* White text color for button */
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+button:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+/* Project List styles */
+#projectList {
+  margin-top: 30px;
+}
+
+#projectList li {
+  display: flex;
+  flex-direction: column;
+}
+
+#projectList h3 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #212529; /* Dark text color for project titles */
+}
+
+#projectList p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #495057; /* Medium gray for project details */
+}
+
+#projectList a {
+  color: #007bff; /* Primary color for links */
+  text-decoration: none;
+}
+
+#projectList a:hover {
+  text-decoration: underline;
+}
+
+/* JSON output styles */
+#json {
+  background: #ffffff; /* White background for JSON output */
+  border: 1px solid #ced4da; /* Light gray border */
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 30px;
+  white-space: pre-wrap;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: #212529; /* Dark gray text color for JSON output */
 }

@@ -1,16 +1,16 @@
 [
     {
         "id": "1",
-        "title": "Portfolio Example",
-        "body": "A website to showcase my projects.",
-        "url": "https://github.com/Sindrebh/webapp_24",
+        "title": "Prosjekt 1",
+        "body": "Relevant prosjekt",
+        "url": "https://github.com/Sindrebh/ITF31619_Oblig1",
         "createdAt": "2024-09-05T12:00:00Z"
     },
     {
         "id": "2",
-        "title": "Portfolio Example 2",
-        "body": "A website to showcase my projects 2.",
-        "url": "https://github.com/Sindrebh/webapp_24",
+        "title": "Prosjekt 2",
+        "body": "annet prosjekt.",
+        "url": "https://github.com/Sindrebh/ITF31619_Oblig1",
         "createdAt": "2024-09-05T12:00:00Z"
     }
 ]

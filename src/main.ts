@@ -1,20 +1,12 @@
 import "./style.css";
-import { PortfolioArraySchema, type CreatePortfolio, type Portfolio } from "../types";
+import { PortfolioArraySchema,type CreatePortfolio, type Portfolio } from "../types";
 import { z } from "zod";
 
-const apiUrl: URL = new URL("http://localhost:3001");
-const projectsApiUrl: URL = new URL(apiUrl + "projects");
-
+const CreatePortfolio: HTMLFormElement = document.getElementById("portfolio-form") as HTMLFormElement;
+const projectListSection: HTMLDivElement = document.getElementById("projectList") as HTMLDivElement;
 const portfolioData: Portfolio[] = [];
 
-const portfolioForm: HTMLFormElement = document.getElementById(
-    "portfolio-form"
-) as HTMLFormElement;
-const projectListSection: HTMLDivElement = document.getElementById(
-    "projectList"
-) as HTMLDivElement;
-
-portfolioForm.addEventListener("submit", async (event: SubmitEvent) => {
+CreatePortfolio.addEventListener("submit", async (event: SubmitEvent) => {
     event.preventDefault();
 
     const newProject = {
@@ -33,8 +25,8 @@ portfolioForm.addEventListener("submit", async (event: SubmitEvent) => {
             (event.target as HTMLFormElement).elements.namedItem(
                 "url"
             ) as HTMLInputElement
-        ).value,
-        createdAt: new Date(),
+        )?.value || '',
+        createdAt: new Date(),        
     };
 
     portfolioData.push(newProject);
@@ -83,10 +75,10 @@ portfolioForm.addEventListener("submit", async (event: SubmitEvent) => {
         .then((data: unknown) => {
         try {
             // Forsøker å parse og validere dataene med Zod-skjemaet
-            const validatedHabits = PortfolioArraySchema.parse(data);
+            const validatedSubjects = PortfolioArraySchema.parse(data);
 
-            portfolioData.push(...validatedHabits); // Legger til validerte vaner i den interne listen
-            updatePortfolio(); // Oppdaterer visningen på nettsiden
+            portfolioData.push(...validatedSubjects);
+            updatePortfolio();
         } catch (error) {
             if (error instanceof z.ZodError) {
             console.error("Ugyldig data mottatt fra serveren:", error.errors);
@@ -101,22 +93,19 @@ portfolioForm.addEventListener("submit", async (event: SubmitEvent) => {
     }
   
     function loadFromJSON() {
-    fetch("static/data.json")
+    fetch("src/data.json")
         .then((response) => {
-        // Konverterer data til json format
+        // Konverterer data til json
         return response.json();
         })
         .then((data) => {
         // Henter ut div med id `data`
         const jsonId = document.getElementById("json");
-        // Debugging
         console.log(data);
         // Går igjennom dataen og lager en `p` til hvert element.
         for (const project of data) {
             const element = document.createElement("p");
-            // Legger til verdien koblet til `title` nøkkelen i .json filen
             element.textContent = `${project.title}`;
-            // Legger innholdet til div-en
             jsonId?.appendChild(element);
         }
         });

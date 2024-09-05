@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Portefølje Sindre Horn</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class ="container">
@@ -33,18 +33,22 @@
       <section id="add-subject">
         <h2 class="h2">Legg til prosjekt</h1>
         <form id="portfolio-form">
-          <label for="portfolio-title">Tittel</label>
-          <input type="text" name="title" id="portfolio-title"/>
-          <label for="portfolio-description">Beskrivelse</label>
-          <input type="text" name="body" id="portfolio-description"/>
-          <label for="portfolio-github">Github link</label>
-          <input type="url" name="url-link" id="portfolio-github" />
-          <button class="button" id="add-portfolio-button">Legg til</button>
+          <label for="title">Tittel:</label>
+          <input type="text" name="title" id="title"/>
+
+          <label for="description">Beskrivelse</label>
+          <input type="text" name="body" id="body"/>
+
+          <label for="url">Github:</label>
+          <input type="url" name="url" id="url" />
+
+          <button type="submit">Legg til</button>
         </form>
 
-        <ul id="projectsList"></ul>
+        <h2>Mine prosjekter:</h2>
+        <ul id="projectList"></ul>
         <pre id="json"></pre>
-        <script type="module" src="main.ts"></script>
+        <script type="module" src="/src/main.ts"></script>
       </section>
 
     </main>

@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "build": "tsc",
     "dev:frontend": "vite",
     "dev:server": "tsx --watch server.ts",
     "dev": "concurrently -n frontend,server -c green,blue \"pnpm run dev:frontend\" \"pnpm run dev:server\""
