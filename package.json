@@ -1,0 +1,22 @@
+{
+  "name": "itf31619-oblig1",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev:frontend": "vite",
+    "dev:server": "tsx --watch server.ts",
+    "dev": "concurrently -n frontend,server -c green,blue \"pnpm run dev:frontend\" \"pnpm run dev:server\""
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.4",
+    "concurrently": "^8.2.2",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.3"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.12.2",
+    "hono": "^4.5.11",
+    "zod": "^3.23.8"
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Portefølje Sindre Horn</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class ="container">
+    <header>
+    <h1>Sindre Horn sin portefølje</h1>
+    </header>
+    <main>
+      <section class="intro-me">
+        <h2>Kort om meg</h2>
+        <p>
+          Jeg studerer for øyeblikket bachelor i informatikk og er 23 år gammel. Dette er min portefølje.
+        </p>
+      </section>
+
+      <section class="coding-skills">
+        <h2>Mine kunnskaper:</h2>
+        <ul>
+          <li>Java</li>
+          <li>Python</li>
+          <li>Noe Javascript/Typescript</li>
+          <li>HTML/CSS</li>
+          <li>Git</li>
+        </ul>
+      </section>
+  
+      <section id="add-subject">
+        <h2 class="h2">Legg til prosjekt</h1>
+        <form id="portfolio-form">
+          <label for="portfolio-title">Tittel</label>
+          <input type="text" name="title" id="portfolio-title"/>
+          <label for="portfolio-description">Beskrivelse</label>
+          <input type="text" name="body" id="portfolio-description"/>
+          <label for="portfolio-github">Github link</label>
+          <input type="url" name="url-link" id="portfolio-github" />
+          <button class="button" id="add-portfolio-button">Legg til</button>
+        </form>
+
+        <ul id="projectsList"></ul>
+        <pre id="json"></pre>
+        <script type="module" src="main.ts"></script>
+      </section>
+
+    </main>
+  </div>
+</body>
+
+</html>
